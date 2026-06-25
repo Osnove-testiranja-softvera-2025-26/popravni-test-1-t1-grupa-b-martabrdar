@@ -1,5 +1,6 @@
 ﻿
 
+using OTS2026_PT1_GrupaA.Exceptions;
 using System;
 
 namespace OTS2026_PT1_GrupaA.Exceptions

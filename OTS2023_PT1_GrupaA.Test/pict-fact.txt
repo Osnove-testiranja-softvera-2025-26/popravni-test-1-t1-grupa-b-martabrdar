@@ -1,0 +1,18 @@
+AmountOfFish: 0, 8, 9, 15, 16
+AmountOfBait: 0, 11, 12
+HasBoat: true, false
+ExpectedScore: Bad, Average, Good
+
+IF [AmountOfFish] > 15
+THEN [ExpectedScore] = "Good";
+
+IF [AmountOfFish] <= 15 AND [AmountOfBait] >= 12 AND [HasBoat] = "true" AND [AmountOfFish] > 8
+THEN [ExpectedScore] = "Good";
+
+IF [AmountOfFish] <= 8 AND [AmountOfBait] >= 12 AND [HasBoat] = "true"
+THEN [ExpectedScore] = "Average";
+
+IF NOT([AmountOfFish] > 15)
+AND NOT([AmountOfFish] <= 15 AND [AmountOfBait] >= 12 AND [HasBoat] = "true" AND [AmountOfFish] > 8)
+AND NOT([AmountOfFish] <= 8 AND [AmountOfBait] >= 12 AND [HasBoat] = "true")
+THEN [ExpectedScore] = "Bad";
